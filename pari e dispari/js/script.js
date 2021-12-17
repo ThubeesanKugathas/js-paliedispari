@@ -10,22 +10,27 @@ const machineNumber = randomNumber(1, 5);
 // della macchina sia pari o dispari
 function isPari(num) {
 
+    // soluzione classica sfruttando il booleano
     // if (num % 2 === 0) {
     //     return true;
     // } else {
     //     return false;
     // }
 
+    // semplificazione della prima 
     // if (num % 2 === 0) {
     //     return true;
     // } 
 
     // return false;
 
+    // ulteriore semplificazione del booleano sotto funzione
     return num % 2 === 0;
 
 }
 
+// ponendo la funzione precedente in un'altra funzione,
+// si riduce l'ammontare di codice per le ultime verifiche 
 function win(total, choice) {
     return (isPari(total) && choice === 'pari') || (!isPari(total) && choice === 'dispari');
 }
@@ -41,6 +46,7 @@ const humanNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 const sum = humanNumber + machineNumber;
 console.log(sum);
 
+// soluzione senza porre isPari sotto un'altra funzione
 // if ((isPari(sum) && question === 'pari') || (!isPari(sum) && question === 'dispari')) {
 //     console.log('hai vinto');
 // } else {
