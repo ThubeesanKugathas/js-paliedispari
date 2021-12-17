@@ -8,6 +8,7 @@ function verifyInvertedWord(wordAnalized) {
     for (let i = wordAnalized.length - 1; i >= 0; i--) {
 
         inverted += wordAnalized[i];
+        console.log(inverted);
         
     }
 
