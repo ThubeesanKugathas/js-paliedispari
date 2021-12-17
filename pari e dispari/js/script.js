@@ -26,6 +26,10 @@ function isPari(num) {
 
 }
 
+function win(total, choice) {
+    return (isPari(total) && choice === 'pari') || (!isPari(total) && choice === 'dispari');
+}
+
 
 // chiedere all'utente se vuole proporre pari o dispari
 const question = prompt('Pari o Dispari?');
@@ -37,7 +41,13 @@ const humanNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 const sum = humanNumber + machineNumber;
 console.log(sum);
 
-if ((isPari(sum) && question === 'pari') || (!isPari(sum) && question === 'dispari')) {
+// if ((isPari(sum) && question === 'pari') || (!isPari(sum) && question === 'dispari')) {
+//     console.log('hai vinto');
+// } else {
+//     console.log('hai perso');
+// }
+
+if (win(sum, question)) {
     console.log('hai vinto');
 } else {
     console.log('hai perso');
